@@ -1,6 +1,6 @@
 <template>
   <div class="temp-landing">
-    <h1>Project Scaffolded 😁</h1>
+    <Button label="Log in" />
   </div>
 </template>
 

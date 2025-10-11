@@ -1,0 +1,12 @@
+@import url(./fonts.css);
+
+html {
+  font-size: 14px; /* matching what primvue website is set to */
+}
+
+*,
+*::before,
+*::after {
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0.5px; /* looks good */
+}
