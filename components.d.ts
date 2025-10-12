@@ -8,9 +8,14 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('primevue/avatar')['default']
     Button: typeof import('primevue/button')['default']
     Card: typeof import('primevue/card')['default']
-    Panel: typeof import('primevue/panel')['default']
+    Divider: typeof import('primevue/divider')['default']
+    FloatLabel: typeof import('primevue/floatlabel')['default']
+    InputText: typeof import('primevue/inputtext')['default']
+    LoginForm: typeof import('./src/components/LoginForm.vue')['default']
+    Password: typeof import('primevue/password')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
