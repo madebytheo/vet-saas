@@ -1,6 +1,6 @@
 <template>
   <CenteredLayout>
-    <RouterLink to="/login">
+    <RouterLink to="/log-in">
       <Button label="Log in" />
     </RouterLink>
   </CenteredLayout>

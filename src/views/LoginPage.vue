@@ -12,7 +12,10 @@
         Welcome Back
       </template>
       <!-- TODO: route 'Sign up' to `/sign-up` -->
-      <template #subtitle> Don't have an account? Sign up </template>
+      <template #subtitle>
+        Don't have an account?
+        <RouterLink to="./sign-up">Sign up</RouterLink>
+      </template>
 
       <template #content>
         <LoginForm @login="handleLogin" />
