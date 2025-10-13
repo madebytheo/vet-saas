@@ -1,12 +1,11 @@
 <template>
   <CenteredLayout>
-    <Card class="card text-center">
+    <Card>
       <template #title>
-        <div>
+        <div class="mb-5">
           <Avatar
             label="VS"
             size="xlarge"
-            class="mb-5"
           />
         </div>
         Welcome Back
@@ -21,6 +20,7 @@
               class="link"
             />
           </RouterLink>
+          🐾
         </div>
       </template>
 

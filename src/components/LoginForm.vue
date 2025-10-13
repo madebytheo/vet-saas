@@ -6,9 +6,10 @@
           v-model="email"
           id="email"
           :invalid="submitted && !email"
+          size="small"
           fluid
         />
-        <label for="email">Email Address</label>
+        <label for="email">Email</label>
       </FloatLabel>
       <Message
         v-if="submitted && !email"
@@ -20,13 +21,14 @@
       >
     </div>
 
-    <div class="mb-3">
+    <div class="mb-2">
       <FloatLabel variant="in">
         <Password
           v-model="password"
           id="password"
           :invalid="submitted && !password"
           :feedback="false"
+          size="small"
           toggle-mask
           fluid
         />

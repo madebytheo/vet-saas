@@ -18,5 +18,11 @@ declare module 'vue' {
     Password: typeof import('primevue/password')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SignupFlow: typeof import('./src/components/SignupFlow.vue')['default']
+    Step: typeof import('primevue/step')['default']
+    StepList: typeof import('primevue/steplist')['default']
+    StepPanel: typeof import('primevue/steppanel')['default']
+    StepPanels: typeof import('primevue/steppanels')['default']
+    Stepper: typeof import('primevue/stepper')['default']
   }
 }

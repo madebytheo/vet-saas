@@ -13,11 +13,6 @@ html {
 
 /* custom styling */
 
-.card {
-  width: 100%;
-  max-width: 20rem;
-}
-
 button.link {
   padding: 0;
 }
