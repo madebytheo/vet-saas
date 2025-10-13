@@ -11,7 +11,6 @@
         </div>
         Welcome Back
       </template>
-      <!-- TODO: route 'Sign up' to `/sign-up` -->
       <template #subtitle>
         Don't have an account?
         <RouterLink to="./sign-up">Sign up</RouterLink>

@@ -1,31 +1,51 @@
 <template>
   <form>
-    <FloatLabel variant="in">
-      <InputText
-        v-model="email"
-        id="email"
-        class="mb-2"
-        fluid
-      />
-      <label for="email">Email Address</label>
-    </FloatLabel>
+    <div class="mb-2">
+      <FloatLabel variant="in">
+        <InputText
+          v-model="email"
+          id="email"
+          :invalid="submitted && !email"
+          fluid
+        />
+        <label for="email">Email Address</label>
+      </FloatLabel>
+      <Message
+        v-if="submitted && !email"
+        severity="error"
+        variant="simple"
+        size="small"
+        class="mt-1"
+        >Email is required</Message
+      >
+    </div>
 
-    <FloatLabel variant="in">
-      <Password
-        v-model="password"
-        id="password"
-        :feedback="false"
-        toggle-mask
-        fluid
-      />
-      <label for="password">Password</label>
-    </FloatLabel>
+    <div class="mb-3">
+      <FloatLabel variant="in">
+        <Password
+          v-model="password"
+          id="password"
+          :invalid="submitted && !password"
+          :feedback="false"
+          toggle-mask
+          fluid
+        />
+        <label for="password">Password</label>
+      </FloatLabel>
+      <Message
+        v-if="submitted && !password"
+        severity="error"
+        variant="simple"
+        size="small"
+        class="mt-1"
+        >Password is required</Message
+      >
+    </div>
 
     <Button
       label="Log in"
       type="submit"
       @click.prevent="onLogin"
-      class="mt-3"
       fluid
     />
   </form>
@@ -41,11 +61,20 @@ const emit = defineEmits(["login"]);
  */
 const email = ref("");
 const password = ref("");
+const submitted = ref(false);
 
 /**
  * methods
  */
 function onLogin() {
+  submitted.value = true;
+
+  // validate form
+  if (!email.value || !password.value) {
+    console.error("login validation failed");
+    return;
+  }
+
   const model = {
     email: email.value,
     password: password.value,
@@ -54,6 +83,4 @@ function onLogin() {
   console.log("emitting login data:", model);
   emit("login", model);
 }
-
-// TODO: add validation + user feedback
 </script>
