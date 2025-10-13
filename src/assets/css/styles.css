@@ -18,6 +18,16 @@ html {
   max-width: 20rem;
 }
 
+button.link {
+  padding: 0;
+}
+
+.linked-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* utility classes */
 
 .ma-0 {

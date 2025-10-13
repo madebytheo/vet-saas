@@ -12,8 +12,16 @@
         Welcome Back
       </template>
       <template #subtitle>
-        Don't have an account?
-        <RouterLink to="./sign-up">Sign up</RouterLink>
+        <div class="linked-subtitle">
+          <div class="mr-1">Don't have an account?</div>
+          <RouterLink to="./sign-up">
+            <Button
+              label="Sign up"
+              variant="link"
+              class="link"
+            />
+          </RouterLink>
+        </div>
       </template>
 
       <template #content>
