@@ -1,7 +1,7 @@
 <template>
   <CenteredLayout>
     <RouterLink to="/log-in">
-      <Button label="Log in" />
+      <Button label="Log In" />
     </RouterLink>
   </CenteredLayout>
 </template>

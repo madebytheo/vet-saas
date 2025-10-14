@@ -21,7 +21,7 @@
       >
     </div>
 
-    <div class="mb-2">
+    <div class="mb-4">
       <FloatLabel variant="in">
         <Password
           v-model="password"
@@ -45,7 +45,7 @@
     </div>
 
     <Button
-      label="Log in"
+      label="Log In"
       type="submit"
       @click.prevent="onLogin"
       fluid
@@ -85,4 +85,8 @@ function onLogin() {
   console.log("emitting login data:", model);
   emit("login", model);
 }
+
+// TODO: proper validation
+// - email format
+// log in should be disabled until all fields are valid
 </script>

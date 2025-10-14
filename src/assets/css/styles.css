@@ -23,6 +23,12 @@ button.link {
   justify-content: center;
 }
 
+.card-stepper > .stepper-panels {
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* utility classes */
 
 .ma-0 {
@@ -294,4 +300,75 @@ button.link {
 }
 .text-right {
   text-align: right;
+}
+
+/* flex */
+.flex {
+  display: flex;
+}
+.ga-0 {
+  gap: 0;
+}
+.ga-1 {
+  gap: 0.25rem;
+}
+.ga-2 {
+  gap: 0.5rem;
+}
+.ga-3 {
+  gap: 0.75rem;
+}
+.ga-4 {
+  gap: 1rem;
+}
+.ga-5 {
+  gap: 1.25rem;
+}
+.ga-6 {
+  gap: 1.5rem;
+}
+.ga-7 {
+  gap: 1.75rem;
+}
+.ga-8 {
+  gap: 2rem;
+}
+.ga-9 {
+  gap: 2.25rem;
+}
+.ga-10 {
+  gap: 2.5rem;
+}
+.ga-11 {
+  gap: 2.75rem;
+}
+.ga-12 {
+  gap: 3rem;
+}
+.ga-13 {
+  gap: 3.25rem;
+}
+.ga-14 {
+  gap: 3.5rem;
+}
+.ga-15 {
+  gap: 3.75rem;
+}
+.ga-16 {
+  gap: 4rem;
+}
+
+/* sizing */
+
+.w-full {
+  width: 100%;
+}
+.w-three-quart {
+  width: 75%;
+}
+.w-half {
+  width: 50%;
+}
+.w-quart {
+  width: 25%;
 }
