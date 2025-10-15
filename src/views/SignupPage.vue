@@ -12,7 +12,7 @@
       </template>
       <template #subtitle>Create a new account.</template>
       <template #content>
-        <SignupFlow @sign-up="handleSignUp" />
+        <SignupFlow />
       </template>
     </Card>
   </CenteredLayout>
@@ -22,12 +22,4 @@
 console.log("signup page loaded");
 import CenteredLayout from "@/layouts/CenteredLayout.vue";
 import SignupFlow from "@/components/SignupFlow.vue";
-import type { SignupModel } from "@/types/models";
-
-/**
- * methods
- */
-function handleSignUp(model: SignupModel) {
-  console.log("sign up data received:", model);
-}
 </script>
