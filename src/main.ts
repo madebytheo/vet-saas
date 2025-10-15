@@ -5,6 +5,7 @@ import { createPinia } from "pinia";
 import PrimeVue from "primevue/config";
 import Lara from "@primeuix/themes/lara";
 import { definePreset } from "@primeuix/themes";
+import ToastService from "primevue/toastservice";
 
 import App from "./App.vue";
 import router from "./router";
@@ -58,5 +59,6 @@ app.use(PrimeVue, {
   },
   ripple: true,
 });
+app.use(ToastService);
 
 app.mount("#app");

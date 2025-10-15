@@ -36,10 +36,4 @@ import type { SignupModel } from "@/types/models";
 function handleSignUp(model: SignupModel) {
   console.log("sign up data received:", model);
 }
-
-// TODO: proper validation
-// - email format
-// - cellphone format
-// - password match
-// sign up should be disabled until all fields are valid
 </script>

@@ -5,11 +5,13 @@
         <InputText
           v-model="email"
           id="email"
-          :invalid="submitted && !email"
+          @blur="emailTouched = true"
+          @input="emailTouched = true"
+          :invalid="(submitted && !email) || ((emailTouched || submitted) && !isEmailValid)"
           size="small"
           fluid
         />
-        <label for="email">Email</label>
+        <label for="email">Email *</label>
       </FloatLabel>
       <Message
         v-if="submitted && !email"
@@ -18,6 +20,14 @@
         size="small"
         class="mt-1"
         >Email is required</Message
+      >
+      <Message
+        v-else-if="(emailTouched || submitted) && email && !isEmailValid"
+        severity="error"
+        variant="simple"
+        size="small"
+        class="mt-1"
+        >Please enter a valid email address</Message
       >
     </div>
 
@@ -32,7 +42,7 @@
           toggle-mask
           fluid
         />
-        <label for="password">Password</label>
+        <label for="password">Password *</label>
       </FloatLabel>
       <Message
         v-if="submitted && !password"
@@ -51,12 +61,16 @@
       fluid
     />
   </form>
+
+  <Toast position="bottom-right" />
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useToast } from "primevue/usetoast";
 
 const emit = defineEmits(["login"]);
+const toast = useToast();
 
 /**
  * state
@@ -66,14 +80,31 @@ const password = ref("");
 const submitted = ref(false);
 
 /**
+ * touched state for real-time validation
+ */
+const emailTouched = ref(false);
+
+/**
+ * validation
+ */
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const isEmailValid = computed(() => emailPattern.test(email.value));
+const isFormValid = computed(() => email.value && isEmailValid.value && password.value);
+
+/**
  * methods
  */
 function onLogin() {
   submitted.value = true;
 
-  // validate form
-  if (!email.value || !password.value) {
+  if (!isFormValid.value) {
     console.error("login validation failed");
+    toast.add({
+      severity: "error",
+      summary: "Login Failed",
+      detail: "Please fix the highlighted fields.",
+      life: 5000,
+    });
     return;
   }
 
@@ -85,8 +116,4 @@ function onLogin() {
   console.log("emitting login data:", model);
   emit("login", model);
 }
-
-// TODO: proper validation
-// - email format
-// log in should be disabled until all fields are valid
 </script>
